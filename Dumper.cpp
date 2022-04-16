@@ -21,7 +21,6 @@ namespace toSet {
 }
 
 
-using namespace toSet;
 
 void DumpLuaTypes(DWORD rL)
 {
@@ -30,28 +29,28 @@ void DumpLuaTypes(DWORD rL)
     do
     {
         if (!strcmp(*found, "nil"))
-            R_LUA_TNIL_ = count;
+            toSet::R_LUA_TNIL_ = count;
         else if (!strcmp(*found, "userdata"))
         {
             if (R_LUA_TLIGHTUSERDATA_ != -1)
-                R_LUA_TUSERDATA_ = count;
+                toSet::R_LUA_TUSERDATA_ = count;
             else
-                R_LUA_TLIGHTUSERDATA_ = count;
+                toSet::R_LUA_TLIGHTUSERDATA_ = count;
         }
         else if (!strcmp(*found, "vector"))
-            R_LUA_TVECTOR_ = count;
+            toSet::R_LUA_TVECTOR_ = count;
         else if (!strcmp(*found, "number"))
-            R_LUA_TNUMBER_ = count;
+            toSet::R_LUA_TNUMBER_ = count;
         else if (!strcmp(*found, "boolean"))
-            R_LUA_TBOOLEAN_ = count;
+            toSet::R_LUA_TBOOLEAN_ = count;
         else if (!strcmp(*found, "string"))
-            R_LUA_TSTRING_ = count;
+            toSet::R_LUA_TSTRING_ = count;
         else if (!strcmp(*found, "thread"))
-            R_LUA_TTHREAD_ = count;
+            toSet::R_LUA_TTHREAD_ = count;
         else if (!strcmp(*found, "function"))
-            R_LUA_TFUNCTION_ = count;
+            toSet::R_LUA_TFUNCTION_ = count;
         else if (!strcmp(*found, "table"))
-            R_LUA_TTABLE_ = count;
+            toSet::R_LUA_TTABLE_ = count;
         count++;
         found++;
     } while (((char)(*found)) != 0 && strncmp(*found, "__", 2) != 0);
@@ -70,4 +69,4 @@ void DumpLuaTypes(DWORD rL)
     //std::printf("R_LUA_TTABLE %i \n", toSet::R_LUA_TTABLE_);
     //std::printf("R_LUA_TVECTOR %i \n", toSet::R_LUA_TVECTOR_);
 
-    ^ Usage.
+    // ^ Usage.
